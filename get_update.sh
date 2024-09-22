@@ -1,9 +1,6 @@
 #!/bin/sh
 # run script specified in config
 
-IPSET_DIR="$(dirname "$0")"
-IPSET_DIR="$(cd "$IPSET_DIR"; pwd)"
-
 /opt/zapret/init.d/openwrt/zapret stop
 opkg update
 opkg list-upgradable | cut -f 1 -d ' ' | xargs -r opkg upgrade  
