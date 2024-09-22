@@ -1,5 +1,6 @@
 #!/bin/sh
 
+cd /opt/zapret/zprtcfg && git pull --show-forced-updates
 /opt/zapret/init.d/openwrt/zapret stop
 opkg update
 opkg list-upgradable | cut -f 1 -d ' ' | xargs -r opkg upgrade  
