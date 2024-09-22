@@ -1,5 +1,4 @@
 #!/bin/sh
-# run script specified in config
 
 /opt/zapret/init.d/openwrt/zapret stop
 opkg update
