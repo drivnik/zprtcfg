@@ -1,5 +1,6 @@
 #!/bin/sh
 
+git fetch
 cd /opt/zapret/zprtcfg && git pull --show-forced-updates
 /opt/zapret/init.d/openwrt/zapret stop
 opkg update
