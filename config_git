@@ -92,8 +92,8 @@ NFQWS_OPT="
 --filter-tcp=80 --dpi-desync=fake,split2 --dpi-desync-fooling=md5sig <HOSTLIST> --hostlist-exclude=/opt/zapret/zprtcfg/youtube-hosts.txt --new
 --filter-tcp=443 --dpi-desync=fake,disorder2 --dpi-desync-fooling=md5sig <HOSTLIST> --hostlist-exclude=/opt/zapret/zprtcfg/youtube-hosts.txt --new
 --filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=6 <HOSTLIST_NOAUTO> --hostlist-exclude=/opt/zapret/zprtcfg/youtube-hosts.txt --new
---dpi-desync=fake,split --dpi-desync-repeats=6 --dpi-desync-fooling=badseq --hostlist=/opt/zapret/zprtcfg/youtube-hosts.txt --dpi-desync-fake-tls=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin --new
---dpi-desync=fake --dpi-desync-repeats=11 --hostlist=/opt/zapret/zprtcfg/youtube-hosts.txt --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin
+--filter-tcp=443 --dpi-desync=fake,split2 --dpi-desync-repeats=11 --dpi-desync-fooling=md5sig --hostlist=/opt/zapret/zprtcfg/youtube-hosts.txt --dpi-desync-fake-tls=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin --new
+--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=11 --hostlist=/opt/zapret/zprtcfg/youtube-hosts.txt --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin
 "
 
 # none,ipset,hostlist,autohostlist
