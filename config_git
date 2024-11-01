@@ -69,7 +69,7 @@ DESYNC_MARK=0x40000000
 DESYNC_MARK_POSTNAT=0x20000000
 #NFQWS_OPT_DESYNC="--dpi-desync=split --dpi-desync-fooling=badseq --hostlist=/opt/zapret/zprtcfg/youtube-hosts.txt --new --dpi-desync=fake,disorder2 --dpi-desync-ttl=4 --dpi-desync-ttl6=0 --dpi-desync-fooling=badsum"
 #NFQWS_OPT_DESYNC="--dpi-desync=fake,split --dpi-desync-repeats=6 --dpi-desync-fake-tls=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin --dpi-desync-fooling=badseq --hostlist=/opt/zapret/zprtcfg/youtube-hosts.txt --new --dpi-desync=fake,disorder2 --dpi-desync-ttl=4 --dpi-desync-ttl6=0 --dpi-desync-fooling=badsum"
-NFQWS_OPT_DESYNC="--dpi-desync=fake,disorder --dpi-desync-ttl=1 --dpi-desync-autottl=2 --wssize 1:6"
+NFQWS_OPT_DESYNC="--dpi-desync=fake,split --dpi-desync-ttl=1 --dpi-desync-autottl=2 --wssize 1:6"
 #NFQWS_OPT_DESYNC_SUFFIX="--dpi-desync=syndata"
 #NFQWS_OPT_DESYNC_HTTP=""
 #NFQWS_OPT_DESYNC_HTTP_SUFFIX="--dpi-desync=syndata"
