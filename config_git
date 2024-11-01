@@ -92,7 +92,7 @@ NFQWS_OPT="
 --filter-tcp=80 --dpi-desync=fake,split2 --dpi-desync-fooling=md5sig <HOSTLIST> --hostlist-exclude=/opt/zapret/zprtcfg/youtube-hosts.txt --new
 --filter-tcp=443 --dpi-desync=fake,disorder2 --dpi-desync-fooling=md5sig <HOSTLIST> --hostlist-exclude=/opt/zapret/zprtcfg/youtube-hosts.txt --new
 --filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=6 <HOSTLIST_NOAUTO> --hostlist-exclude=/opt/zapret/zprtcfg/youtube-hosts.txt --new
---filter-tcp=443 --dpi-desync=fake,disorder2 --dpi-desync-ttl=1 --dpi-desync-autottl=1 --wssize 1:6 --hostlist=/opt/zapret/zprtcfg/youtube-hosts.txt
+--dpi-desync=fake,disorder2 --dpi-desync-ttl=1 --dpi-desync-autottl=1 --wssize 1:6 --hostlist=/opt/zapret/zprtcfg/youtube-hosts.txt
 "
 
 # none,ipset,hostlist,autohostlist
