@@ -6,6 +6,9 @@
 #cd /opt/zapret && git reset --hard HEAD && git pull --rebase --autostash
 #wget https://github.com/bol-van/zapret/releases/download/v70.3/zapret-v70.3-openwrt-embedded.tar.gz
 #tar xvf  zapret-v70.3-openwrt-embedded.tar.gz
+#cd /tmp/zapret-v70.3
+#./uninstall_easy.sh
+#./install_bin.sh
 /opt/zapret/ipset/clear_lists.sh
 /opt/zapret/ipset/get_user.sh
 /opt/zapret/ipset/get_config.sh
