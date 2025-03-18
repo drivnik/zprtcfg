@@ -12,6 +12,8 @@
 #./install_prereq.sh
 #./blockcheck.sh 
 #./install_easy.sh
+#cd /opt/zapret/
+#git clone https://github.com/drivnik/zprtcfg.git
 /opt/zapret/ipset/clear_lists.sh
 /opt/zapret/ipset/get_user.sh
 /opt/zapret/ipset/get_config.sh
