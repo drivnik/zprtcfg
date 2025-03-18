@@ -9,6 +9,9 @@
 #cd /tmp/zapret-v70.3
 #./uninstall_easy.sh
 #./install_bin.sh
+#./install_prereq.sh
+#./blockcheck.sh 
+#./install_easy.sh
 /opt/zapret/ipset/clear_lists.sh
 /opt/zapret/ipset/get_user.sh
 /opt/zapret/ipset/get_config.sh
