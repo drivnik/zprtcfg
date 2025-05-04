@@ -13,6 +13,7 @@
 #./blockcheck.sh 
 #./install_easy.sh
 #cd /opt/zapret/
+#apk add git-http
 #git clone https://github.com/drivnik/zprtcfg.git
 /opt/zapret/ipset/clear_lists.sh
 /opt/zapret/ipset/get_user.sh
