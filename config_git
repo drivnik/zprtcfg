@@ -8,7 +8,7 @@
 #WS_USER=nobody
 
 # override firewall type : iptables,nftables,ipfw
-FWTYPE=iptables
+FWTYPE=nftables
 # nftables only : set this to 0 to use pre-nat mode. default is post-nat.
 # pre-nat mode disables some bypass techniques for forwarded traffic but allows to see client IP addresses in debug log
 #POSTNAT=0
@@ -55,7 +55,7 @@ TPPORT_SOCKS=987
 # <HOSTLIST_NOAUTO> appends ipset/zapret-hosts-auto.txt as normal list
 TPWS_SOCKS_OPT="
 --filter-tcp=80 --methodeol <HOSTLIST> --new
---filter-tcp=443 --split-tls=sni --disorder <HOSTLIST>
+--filter-tcp=443 --split-pos=1,midsld --disorder <HOSTLIST>
 "
 
 TPWS_ENABLE=0
@@ -65,7 +65,7 @@ TPWS_PORTS=80,443
 # <HOSTLIST_NOAUTO> appends ipset/zapret-hosts-auto.txt as normal list
 TPWS_OPT="
 --filter-tcp=80 --methodeol <HOSTLIST> --new
---filter-tcp=443 --split-tls=sni --disorder <HOSTLIST>
+--filter-tcp=443 --split-pos=1,midsld --disorder <HOSTLIST>
 "
 
 NFQWS_ENABLE=1
@@ -95,11 +95,13 @@ NFQWS_OPT="
 --dpi-desync-fooling=badsum
 --new
 --filter-tcp=443
---dpi-desync=multidisorder
---dpi-desync-split-pos=1,midsld
---dpi-desync-repeats=11
---dpi-desync-fooling=badsum
---dpi-desync-fake-tls-mod=rnd,dupsid,sni=www.google.com
+--dpi-desync=fake,multidisorder
+--dpi-desync-split-pos=7,sld+1
+--dpi-desync-fake-tls=0x0F0F0F0F
+--dpi-desync-fake-tls=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin
+--dpi-desync-fake-tls-mod=rnd,dupsid,sni=fonts.google.com
+--dpi-desync-fooling=badseq
+--dpi-desync-autottl 2:2-12
 --new
 --filter-udp=443
 --hostlist=/opt/zapret/zprtcfg/youtube-hosts.txt
@@ -123,7 +125,7 @@ NFQWS_OPT="
 # none,ipset,hostlist,autohostlist
 MODE_FILTER=autohostlist
 
-# openwrt only : donttouch,none,software,hardware
+# donttouch,none,software,hardware
 FLOWOFFLOAD=donttouch
 
 # openwrt: specify networks to be treated as LAN. default is "lan"
@@ -153,7 +155,12 @@ INIT_APPLY_FW=1
 # do not work with ipv4
 #DISABLE_IPV4=1
 # do not work with ipv6
-DISABLE_IPV6=0
+DISABLE_IPV6=1
+
+# drop icmp time exceeded messages for nfqws tampered connections
+# in POSTNAT mode this can interfere with default mtr/traceroute in tcp or udp mode. use source port not redirected to nfqws
+# set to 0 if you are not expecting connection breakage due to icmp in response to TCP SYN or UDP
+FILTER_TTL_EXPIRED_ICMP=1
 
 # select which init script will be used to get ip or host list
 # possible values : get_user.sh get_antizapret.sh get_combined.sh get_reestr.sh get_hostlist.sh
