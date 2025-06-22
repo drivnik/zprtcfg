@@ -15,6 +15,7 @@
 #cd /opt/zapret/
 #apk add git-http
 #git clone https://github.com/drivnik/zprtcfg.git
+#config file ". /opt/zapret/zprtcfg/config_git"
 /opt/zapret/ipset/clear_lists.sh
 /opt/zapret/ipset/get_user.sh
 /opt/zapret/ipset/get_config.sh
