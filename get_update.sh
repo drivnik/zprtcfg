@@ -1,6 +1,5 @@
 #!/bin/sh
 
-/opt/zapret/init.d/openwrt/zapret stop
 #opkg update
 #opkg list-upgradable | cut -f 1 -d ' ' | xargs -r opkg upgrade  
 #cd /opt/zapret && git reset --hard HEAD && git pull --rebase --autostash
@@ -16,6 +15,8 @@
 #apk add git-http
 #git clone https://github.com/drivnik/zprtcfg.git
 #config file ". /opt/zapret/zprtcfg/config_git"
+
+/opt/zapret/init.d/openwrt/zapret stop
 /opt/zapret/ipset/clear_lists.sh
 /opt/zapret/ipset/get_user.sh
 /opt/zapret/ipset/get_config.sh
