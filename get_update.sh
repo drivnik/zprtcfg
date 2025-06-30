@@ -14,11 +14,11 @@
 #./install_bin.sh
 #echo "nftables" | ./install_prereq.sh
 #./blockcheck.sh 
-#printf "y\n2\nn\nn\nn\n4\nn\nn\ny\nn\ny\n3\n1\n" | ./install_easy.sh
+#printf "y\n2\nn\nn\nn\n4\nn\nn\ny\nn\ny\n3\n1" | ./install_easy.sh
 #cd /opt/zapret/
-#apk add git-http
+#opkg install git-http
 #git clone https://github.com/drivnik/zprtcfg.git
-#config file ". /opt/zapret/zprtcfg/config_git"
+#echo ". /opt/zapret/zprtcfg/config_git" > /opt/zapret/config
 
 /opt/zapret/init.d/openwrt/zapret stop
 /opt/zapret/ipset/clear_lists.sh
