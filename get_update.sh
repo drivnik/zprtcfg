@@ -3,14 +3,18 @@
 #opkg update
 #opkg list-upgradable | cut -f 1 -d ' ' | xargs -r opkg upgrade  
 #cd /opt/zapret && git reset --hard HEAD && git pull --rebase --autostash
-#wget https://github.com/bol-van/zapret/releases/download/v70.3/zapret-v70.3-openwrt-embedded.tar.gz
-#tar xvf  zapret-v70.3-openwrt-embedded.tar.gz
-#cd /tmp/zapret-v70.3
-#./uninstall_easy.sh
+#cd /opt/zapret
+#yes n | ./uninstall_easy.sh
+#cd && rm -r "/opt/zapret"
+#cd /tmp
+#wget -O zapret.tar.gz "https://github.com/bol-van/zapret/releases/download/v71.1.1/zapret-v71.1.1-openwrt-embedded.tar.gz"
+#tar -xzf  zapret.tar.gz
+#cd /tmp/zapret-v71.1.1
+#yes n | ./uninstall_easy.sh
 #./install_bin.sh
-#./install_prereq.sh
+#echo "nftables" | ./install_prereq.sh
 #./blockcheck.sh 
-#./install_easy.sh
+#printf "y\n2\nn\nn\nn\n4\nn\nn\ny\nn\ny\n3\n1\n" | ./install_easy.sh
 #cd /opt/zapret/
 #apk add git-http
 #git clone https://github.com/drivnik/zprtcfg.git
