@@ -19,6 +19,7 @@
 #opkg install git-http
 #git clone https://github.com/drivnik/zprtcfg.git
 #echo ". /opt/zapret/zprtcfg/config_git" > /opt/zapret/config
+#/bin/sh /opt/zapret/zprtcfg/get_update.sh
 
 /opt/zapret/init.d/openwrt/zapret stop
 /opt/zapret/ipset/clear_lists.sh
