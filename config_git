@@ -109,18 +109,12 @@ NFQWS_OPT="
 --dpi-desync-split-seqovl-pattern=/opt/zapret/files/fake/quic_initial_www_google_com.bin  
 --new
 --filter-tcp=443 <HOSTLIST> 
---dpi-desync=fake,multidisorder
---dpi-desync-fake-tls=0x00000000
---dpi-desync-fake-tls=!
---dpi-desync-split-pos=2,midsld
---dpi-desync-repeats=2
---dpi-desync-fooling=badseq
---dpi-desync-fake-tls-mod=rnd,dupsid,sni=www.google.com
---new
---filter-udp=443 <HOSTLIST> 
---dpi-desync=fake
---dpi-desync-repeats=11
---dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin
+--dpi-desync=hostfakesplit
+--dpi-desync-hostfakesplit-mod=host=rzd.ru
+--dpi-desync-hostfakesplit-midhost=host-2
+--dpi-desync-split-seqovl=726
+--dpi-desync-fooling=badsum,badseq
+--dpi-desync-badseq-increment=0
 "
 
 # none,ipset,hostlist,autohostlist
