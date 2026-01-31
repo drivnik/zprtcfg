@@ -7,9 +7,9 @@
 #yes n | ./uninstall_easy.sh
 #cd && rm -r "/opt/zapret"
 #cd /tmp
-#wget -O zapret.tar.gz "https://github.com/bol-van/zapret/releases/download/v71.1.1/zapret-v71.1.1-openwrt-embedded.tar.gz"
+#wget -O zapret.tar.gz "https://github.com/bol-van/zapret/releases/download/v72.9/zapret-v72.9-openwrt-embedded.tar.gz"
 #tar -xzf  zapret.tar.gz
-#cd /tmp/zapret-v71.1.1
+#cd /tmp/zapret-v72.9
 #yes n | ./uninstall_easy.sh
 #./install_bin.sh
 #echo "nftables" | ./install_prereq.sh
