@@ -27,3 +27,5 @@
 /opt/zapret/ipset/get_config.sh
 /opt/zapret/init.d/openwrt/zapret start
 /opt/zapret/init.d/openwrt/zapret restart
+#curl -fsSL https://raw.githubusercontent.com/remittor/zapret-openwrt/zap1/zapret/up
+#date-pkg.sh -o /tmp/zap.sh && sh /tmp/zap.sh -u 2
